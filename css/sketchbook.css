@@ -1,4 +1,30 @@
+/*
+ * Common
+ */
+.bottomRight {
+	bottom : 0;
+	right: 0;
+	position: absolute;
+	width:	50%;
+	height: 50%;
+}
+
+/*
+ * Pixel
+ */
+.pixelCanvas {
+	position: relative;
+	left: -50%;
+	top: -50%;
+	width: 100%;
+	height: 100%;
+}
+
+/*
+ * Sketchbook
+ */
 .sketchbook {
 	width: 100%;
 	height: 100%;
 }
+
