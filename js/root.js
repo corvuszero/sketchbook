@@ -35,9 +35,15 @@ var Pixel = React.createClass({
 
 var PixelCanvas = React.createClass({
 	componentDidMount: function() {
+    window.addEventListener('resize', this.handleResize);
+
 		// Drawing from the get-go
 		this.forceUpdate();
 	},
+
+  componentWillUnmount: function() {
+    window.removeEventListener('resize', this.handleResize);                      
+  },
 
 	draw: function () {
 		var canvas = this.refs.canvas || null;
@@ -46,6 +52,8 @@ var PixelCanvas = React.createClass({
 		}
 
 		var ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 		var pixels = this.props.pixels;
 		// Calculating pixel size to keep aspect ratio of drawing
 		var size = Math.floor(Math.min(
@@ -61,6 +69,10 @@ var PixelCanvas = React.createClass({
 			}
 		}
 	},
+
+  handleResize: function(e) {
+    this.draw();
+  },
 
 	render: function() {
 		this.draw();
