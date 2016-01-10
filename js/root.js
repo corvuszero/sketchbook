@@ -1,8 +1,25 @@
 var Pixel = React.createClass({
 	getInitialState: function() {
 		return {
-			pixels: [['red', 'green'],['blue', 'yellow']],
-			pixelSize: 10
+			pixels: [
+				['#FFFFFF', '#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+				['#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#FFFFFF'],
+				['#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#f8ab00', '#f8ab00', '#706800', '#f8ab00', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+				['#FFFFFF', '#706800', '#f8ab00', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#FFFFFF'],
+				['#FFFFFF', '#706800', '#f8ab00', '#706800', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#706800', '#f8ab00', '#f8ab00', '#f8ab00'],
+				['#FFFFFF', '#706800', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#706800', '#706800', '#706800', '#706800', '#FFFFFF'],
+				['#FFFFFF', '#FFFFFF', '#FFFFFF', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#FFFFFF', '#FFFFFF'],
+				['#FFFFFF', '#FFFFFF', '#706800', '#706800', '#d80000', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+				['#FFFFFF', '#706800', '#706800', '#706800', '#d80000', '#706800', '#706800', '#d80000', '#706800', '#706800', '#706800', '#FFFFFF'],
+				['#706800', '#706800', '#706800', '#706800', '#d80000', '#d80000', '#d80000', '#d80000', '#706800', '#706800', '#706800', '#706800'],
+				['#f8ab00', '#f8ab00', '#706800', '#d80000', '#f8ab00', '#d80000', '#d80000', '#f8ab00', '#d80000', '#706800', '#f8ab00', '#f8ab00'],
+				['#f8ab00', '#f8ab00', '#f8ab00', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#f8ab00', '#f8ab00', '#f8ab00'],
+				['#f8ab00', '#f8ab00', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#f8ab00', '#f8ab00'],
+				['#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF'],
+				['#FFFFFF', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#FFFFFF'],
+				['#706800', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#706800']
+			],
+			pixelSize: 7
 		}
 	},
 
@@ -34,15 +51,11 @@ var PixelCanvas = React.createClass({
 
 		var ctx = canvas.getContext('2d');
 		var pixels = this.props.pixels;
+		var size = this.props.pixelSize;
 		for (var y = 0; y < pixels.length; y++) {
 			for (var x = 0; x < pixels[y].length; x++) {
-				ctx.fillStyle = pixels[x][y];
-				ctx.fillRect(
-					x * this.props.pixelSize, 
-					y * this.props.pixelSize, 
-					this.props.pixelSize,
-					this.props.pixelSize
-				);
+				ctx.fillStyle = pixels[y][x];
+				ctx.fillRect(x * size, y * size, size, size);
 			}
 		}
 	},
