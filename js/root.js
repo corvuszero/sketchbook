@@ -50,6 +50,12 @@ var PixelCanvas = React.createClass({
 		if (canvas == null) {
 			return;
 		}
+    /*
+     * Canvas always has a default size of 300 x 150. Overriding.
+     * http://www.w3.org/TR/2012/WD-html5-author-20120329/the-canvas-element.html#the-canvas-element
+     */
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
 
 		var ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -65,7 +71,12 @@ var PixelCanvas = React.createClass({
 		for (var y = 0; y < pixels.length; y++) {
 			for (var x = 0; x < pixels[y].length; x++) {
 				ctx.fillStyle = pixels[y][x];
-				ctx.fillRect(offsetX + (x * size), offsetY + ( y * size), size, size);
+				ctx.fillRect(
+          Math.floor(offsetX + (x * size)), 
+          Math.floor(offsetY + ( y * size)), 
+          size, 
+          size
+        );
 			}
 		}
 	},
