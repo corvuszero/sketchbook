@@ -52,10 +52,12 @@ var PixelCanvas = React.createClass({
 			canvas.width / pixels[0].length, 
 			canvas.height / pixels.length
 		));
+		var offsetX = (canvas.width - (size * pixels[0].length)) / 2;
+		var offsetY = (canvas.height - (size * pixels.length)) / 2;
 		for (var y = 0; y < pixels.length; y++) {
 			for (var x = 0; x < pixels[y].length; x++) {
 				ctx.fillStyle = pixels[y][x];
-				ctx.fillRect(x * size, y * size, size, size);
+				ctx.fillRect(offsetX + (x * size), offsetY + ( y * size), size, size);
 			}
 		}
 	},
