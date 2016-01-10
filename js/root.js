@@ -18,8 +18,7 @@ var Pixel = React.createClass({
 				['#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF'],
 				['#FFFFFF', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#FFFFFF'],
 				['#706800', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#706800']
-			],
-			pixelSize: 7
+			]
 		}
 	},
 
@@ -27,10 +26,7 @@ var Pixel = React.createClass({
 		return (
 			<div className="pixel">
 				<div className="bottomRight">
-					<PixelCanvas 
-						pixels={this.state.pixels}
-						pixelSize={this.state.pixelSize}
-					/>
+					<PixelCanvas pixels={this.state.pixels} />
 				</div>
 			</div>
 		);
@@ -51,7 +47,11 @@ var PixelCanvas = React.createClass({
 
 		var ctx = canvas.getContext('2d');
 		var pixels = this.props.pixels;
-		var size = this.props.pixelSize;
+		// Calculating pixel size to keep aspect ratio of drawing
+		var size = Math.floor(Math.min(
+			canvas.width / pixels[0].length, 
+			canvas.height / pixels.length
+		));
 		for (var y = 0; y < pixels.length; y++) {
 			for (var x = 0; x < pixels[y].length; x++) {
 				ctx.fillStyle = pixels[y][x];
