@@ -22,13 +22,16 @@ var Pixel = React.createClass({
 		}
 	},
 
-	render: function() {
-		return (
-			<div className="pixel">
-				<div className="bottomRight">
-					<PixelCanvas pixels={this.state.pixels} />
-				</div>
-			</div>
+  render: function() {
+    return (
+      <div className="app">
+        <PixelMenu />
+        <div className="demo">
+          <div className="center">
+            <PixelCanvas pixels={this.state.pixels} />
+          </div>
+        </div>
+      </div>
 		);
 	}
 });
@@ -95,10 +98,20 @@ var PixelCanvas = React.createClass({
 	}
 });
 
+var PixelMenu = React.createClass({
+  render: function() {
+    return (
+      <div className="menu">
+        <h1>Pixel</h1>
+      </div>
+    );
+  }
+});
+
 var Sketchbook = React.createClass({
 	render: function() {
 		return (
-			<div className="sketchbook">
+			<div className="container">
 				<Pixel />
 			</div>
 		);
