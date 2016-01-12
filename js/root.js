@@ -102,7 +102,7 @@ var PixelMenu = React.createClass({
   render: function() {
     return (
       <div className="menu">
-        <h1>Pixel</h1>
+        <h1 className="title">Pixel</h1>
       </div>
     );
   }

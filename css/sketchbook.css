@@ -7,6 +7,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   height: 100%;
+  padding-bottom: 12px;
+  padding-top: 12px;
   width: 100%;
 }
 
@@ -25,14 +27,25 @@
 
 .demo {
   flex-grow: 2;
+  flex-shrink: 1;
   height: 100%;
   order: 2;
 }
 
 .menu {
+  border-right: 1px solid #a6a6a6;
   height: 100%;
   order: 1;
-  width: 200px;
+  width: 240px;
+}
+
+.menu .title {
+  color: #7200e6;
+  margin: auto;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  text-align: center;
+  width: 50%;
 }
 
 #root {
