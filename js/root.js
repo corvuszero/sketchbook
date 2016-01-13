@@ -1,34 +1,70 @@
 var Pixel = React.createClass({
   getInitialState: function() {
     return {
-      pixels: [
-        ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-        ['#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#FFFFFF'],
-        ['#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#f8ab00', '#f8ab00', '#706800', '#f8ab00', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-        ['#FFFFFF', '#706800', '#f8ab00', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#FFFFFF'],
-        ['#FFFFFF', '#706800', '#f8ab00', '#706800', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#706800', '#f8ab00', '#f8ab00', '#f8ab00'],
-        ['#FFFFFF', '#706800', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#706800', '#706800', '#706800', '#706800', '#FFFFFF'],
-        ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#FFFFFF', '#FFFFFF'],
-        ['#FFFFFF', '#FFFFFF', '#706800', '#706800', '#d80000', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-        ['#FFFFFF', '#706800', '#706800', '#706800', '#d80000', '#706800', '#706800', '#d80000', '#706800', '#706800', '#706800', '#FFFFFF'],
-        ['#706800', '#706800', '#706800', '#706800', '#d80000', '#d80000', '#d80000', '#d80000', '#706800', '#706800', '#706800', '#706800'],
-        ['#f8ab00', '#f8ab00', '#706800', '#d80000', '#f8ab00', '#d80000', '#d80000', '#f8ab00', '#d80000', '#706800', '#f8ab00', '#f8ab00'],
-        ['#f8ab00', '#f8ab00', '#f8ab00', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#f8ab00', '#f8ab00', '#f8ab00'],
-        ['#f8ab00', '#f8ab00', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#f8ab00', '#f8ab00'],
-        ['#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF'],
-        ['#FFFFFF', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#FFFFFF'],
-        ['#706800', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#706800']
-      ]
+      selectorOptions : {
+        'Mario': {
+          key : 0,
+          pixels : [
+            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+            ['#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#FFFFFF'],
+            ['#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#f8ab00', '#f8ab00', '#706800', '#f8ab00', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+            ['#FFFFFF', '#706800', '#f8ab00', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#FFFFFF'],
+            ['#FFFFFF', '#706800', '#f8ab00', '#706800', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#706800', '#f8ab00', '#f8ab00', '#f8ab00'],
+            ['#FFFFFF', '#706800', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#706800', '#706800', '#706800', '#706800', '#FFFFFF'],
+            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#FFFFFF', '#FFFFFF'],
+            ['#FFFFFF', '#FFFFFF', '#706800', '#706800', '#d80000', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+            ['#FFFFFF', '#706800', '#706800', '#706800', '#d80000', '#706800', '#706800', '#d80000', '#706800', '#706800', '#706800', '#FFFFFF'],
+            ['#706800', '#706800', '#706800', '#706800', '#d80000', '#d80000', '#d80000', '#d80000', '#706800', '#706800', '#706800', '#706800'],
+            ['#f8ab00', '#f8ab00', '#706800', '#d80000', '#f8ab00', '#d80000', '#d80000', '#f8ab00', '#d80000', '#706800', '#f8ab00', '#f8ab00'],
+            ['#f8ab00', '#f8ab00', '#f8ab00', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#f8ab00', '#f8ab00', '#f8ab00'],
+            ['#f8ab00', '#f8ab00', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#f8ab00', '#f8ab00'],
+            ['#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF'],
+            ['#FFFFFF', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#FFFFFF'],
+            ['#706800', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#706800']
+          ] 
+        },
+        'Megaman': {
+          key : 1,
+          pixels : [
+            ['#FF0000', '#00FF00'],   
+            ['#0000FF', '#000000'],   
+          ]
+        }
+      },
+      selectedModel : 'Mario',
+      title : "Pixel"
     }
+  },
+
+  onSelect: function(event) {
+    this.setState({
+      selectedModel : event.target.value
+    });
   },
 
   render: function() {
     return (
       <div className="app">
-        <PixelMenu />
+        <SketchbookMenu title={this.state.title}>
+          <div>
+            <label htmlFor="model">Model</label>
+            <select value={this.state.selectedModel} onChange={this.onSelect}>
+              {Object.keys(this.state.selectorOptions).map((function(name) {
+                var model = this.state.selectorOptions[name];
+                return (
+                  <option key={model.key} value={name}>
+                    {name}
+                  </option>
+                );
+              }).bind(this))}
+            </select>
+          </div>
+        </SketchbookMenu>
         <div className="demo">
           <div className="center">
-            <PixelCanvas pixels={this.state.pixels} />
+            <PixelCanvas pixels={
+              this.state.selectorOptions[this.state.selectedModel].pixels
+            }/>
           </div>
         </div>
       </div>
@@ -98,11 +134,12 @@ var PixelCanvas = React.createClass({
   }
 });
 
-var PixelMenu = React.createClass({
+var SketchbookMenu = React.createClass({
   render: function() {
     return (
       <div className="menu">
-        <h1 className="title">Pixel</h1>
+        <h1 className="title">{this.props.title}</h1>
+        {this.props.children}
       </div>
     );
   }
