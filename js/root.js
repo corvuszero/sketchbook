@@ -2,65 +2,90 @@ var Pixel = React.createClass({
   getInitialState: function() {
     return {
       selectorOptions : {
-        'Mario': {
+        'Mario' : {
           key : 0,
           pixels : [
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#f8ab00', '#f8ab00', '#706800', '#f8ab00', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#706800', '#f8ab00', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#FFFFFF'],
-            ['#FFFFFF', '#706800', '#f8ab00', '#706800', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#706800', '#f8ab00', '#f8ab00', '#f8ab00'],
-            ['#FFFFFF', '#706800', '#706800', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#706800', '#706800', '#706800', '#706800', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#f8ab00', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#706800', '#706800', '#d80000', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#706800', '#706800', '#706800', '#d80000', '#706800', '#706800', '#d80000', '#706800', '#706800', '#706800', '#FFFFFF'],
-            ['#706800', '#706800', '#706800', '#706800', '#d80000', '#d80000', '#d80000', '#d80000', '#706800', '#706800', '#706800', '#706800'],
-            ['#f8ab00', '#f8ab00', '#706800', '#d80000', '#f8ab00', '#d80000', '#d80000', '#f8ab00', '#d80000', '#706800', '#f8ab00', '#f8ab00'],
-            ['#f8ab00', '#f8ab00', '#f8ab00', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#f8ab00', '#f8ab00', '#f8ab00'],
-            ['#f8ab00', '#f8ab00', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#d80000', '#f8ab00', '#f8ab00'],
-            ['#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF', '#d80000', '#d80000', '#d80000', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#FFFFFF'],
-            ['#706800', '#706800', '#706800', '#706800', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#706800', '#706800', '#706800', '#706800']
-          ] 
+            ['0', '0', '0', '1', '1', '1', '1', '1', '0', '0', '0', '0'],
+            ['0', '0', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0'],
+            ['0', '0', '2', '2', '2', '3', '3', '2', '3', '0', '0', '0'],
+            ['0', '2', '3', '2', '3', '3', '3', '2', '3', '3', '3', '0'],
+            ['0', '2', '3', '2', '2', '3', '3', '3', '2', '3', '3', '3'],
+            ['0', '2', '2', '3', '3', '3', '3', '2', '2', '2', '2', '0'],
+            ['0', '0', '0', '3', '3', '3', '3', '3', '3', '3', '0', '0'],
+            ['0', '0', '2', '2', '1', '2', '2', '2', '0', '0', '0', '0'],
+            ['0', '2', '2', '2', '1', '2', '2', '1', '2', '2', '2', '0'],
+            ['2', '2', '2', '2', '1', '1', '1', '1', '2', '2', '2', '2'],
+            ['3', '3', '2', '1', '3', '1', '1', '3', '1', '2', '3', '3'],
+            ['3', '3', '3', '1', '1', '1', '1', '1', '1', '3', '3', '3'],
+            ['3', '3', '1', '1', '1', '1', '1', '1', '1', '1', '3', '3'],
+            ['0', '0', '1', '1', '1', '0', '0', '1', '1', '1', '0', '0'],
+            ['0', '2', '2', '2', '0', '0', '0', '0', '2', '2', '2', '0'],
+            ['2', '2', '2', '2', '0', '0', '0', '0', '2', '2', '2', '2']
+         ],
+         skins : {
+          normal : {
+            '0' : 'skip',
+            '1' : '#d80000',
+            '2' : '#706800',
+            '3' : '#f8ab00'
+          }
+         }
         },
-        'Megaman': {
+        'Megaman' : {
           key : 1,
           pixels : [
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#00faff', '#00faff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#007fff', '#007fff', '#007fff', '#000000', '#00faff', '#00faff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#000000', '#000000', '#000000', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#000000', '#00faff', '#00faff', '#007fff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#00faff', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#000000', '#000000', '#007fff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#00faff', '#007fff', '#007fff', '#ffd9cc', '#ffffff', '#ffffff', '#ffffff', '#007fff', '#007fff', '#ffffff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#00faff', '#007fff', '#ffd9cc', '#ffffff', '#ffffff', '#000000', '#000000', '#ffd9cc', '#000000', '#ffffff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#007fff', '#ffd9cc', '#ffffff', '#ffffff', '#000000', '#000000', '#ffd9cc', '#000000', '#ffffff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#007fff', '#ffd9cc', '#ffd9cc', '#ffffff', '#ffffff', '#ffffff', '#ffd9cc', '#ffffff', '#ffffff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#00faff', '#00faff', '#000000', '#007fff', '#ffd9cc', '#000000', '#000000', '#000000', '#000000', '#ffd9cc', '#000000', '#000000', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#007fff', '#00faff', '#00faff', '#00faff', '#00faff', '#000000', '#ffd9cc', '#ffd9cc', '#ffd9cc', '#ffd9cc', '#ffd9cc', '#000000', '#00faff', '#00faff', '#007fff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#007fff', '#007fff', '#00faff', '#00faff', '#00faff', '#00faff', '#000000', '#000000', '#000000', '#000000', '#000000', '#00faff', '#00faff', '#007fff', '#007fff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#000000', '#007fff', '#007fff', '#007fff', '#00faff', '#000000', '#00faff', '#00faff', '#00faff', '#00faff', '#00faff', '#00faff', '#00faff', '#000000', '#00faff', '#007fff', '#007fff', '#007fff', '#000000', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#000000', '#007fff', '#007fff', '#000000', '#000000', '#000000', '#00faff', '#00faff', '#00faff', '#00faff', '#00faff', '#00faff', '#00faff', '#000000', '#000000', '#000000', '#007fff', '#007fff', '#000000', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#000000', '#007fff', '#007fff', '#007fff', '#000000', '#000000', '#00faff', '#00faff', '#00faff', '#00faff', '#00faff', '#00faff', '#00faff', '#000000', '#000000', '#007fff', '#007fff', '#007fff', '#000000', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#000000', '#007fff', '#007fff', '#007fff', '#000000', '#000000', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#000000', '#000000', '#007fff', '#007fff', '#007fff', '#000000', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#FFFFFF', '#000000', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#000000', '#FFFFFF', '#000000', '#000000', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#00faff', '#00faff', '#007fff', '#007fff', '#007fff', '#007fff', '#00faff', '#00faff', '#00faff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#007fff', '#007fff', '#00faff', '#00faff', '#00faff', '#000000', '#00faff', '#00faff', '#00faff', '#00faff', '#007fff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#007fff', '#007fff', '#007fff', '#00faff', '#000000', '#FFFFFF', '#000000', '#00faff', '#007fff', '#007fff', '#007fff', '#000000', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#FFFFFF', '#000000', '#000000', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#000000', '#000000', '#FFFFFF', '#FFFFFF'],
-            ['#FFFFFF', '#000000', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#007fff', '#000000', '#FFFFFF'],
-            ['#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#FFFFFF'],
-          ]
+            ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
+            ['0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '1', '2', '2', '1', '0', '0', '0', '0', '0', '0', '0', '0'],
+            ['0', '0', '0', '0', '0', '0', '0', '0', '1', '3', '3', '3', '1', '2', '2', '1', '0', '0', '0', '0', '0', '0', '0'],
+            ['0', '0', '0', '0', '0', '0', '0', '1', '3', '3', '3', '3', '3', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0'],
+            ['0', '0', '0', '0', '0', '0', '0', '1', '3', '3', '3', '3', '3', '1', '2', '2', '3', '1', '0', '0', '0', '0', '0'],
+            ['0', '0', '0', '0', '0', '0', '1', '2', '3', '3', '3', '3', '3', '3', '1', '1', '3', '1', '0', '0', '0', '0', '0'],
+            ['0', '0', '0', '0', '0', '0', '1', '2', '3', '3', '4', '5', '5', '5', '3', '3', '5', '1', '0', '0', '0', '0', '0'],
+            ['0', '0', '0', '0', '0', '0', '1', '2', '3', '4', '5', '5', '1', '1', '4', '1', '5', '1', '0', '0', '0', '0', '0'],
+            ['0', '0', '0', '0', '0', '0', '0', '1', '3', '4', '5', '5', '1', '1', '4', '1', '5', '1', '0', '0', '0', '0', '0'],
+            ['0', '0', '0', '0', '0', '0', '1', '1', '3', '4', '4', '5', '5', '5', '4', '5', '5', '1', '0', '0', '0', '0', '0'],
+            ['0', '0', '0', '0', '1', '1', '2', '2', '1', '3', '4', '1', '1', '1', '1', '4', '1', '1', '1', '0', '0', '0', '0'],
+            ['0', '0', '0', '1', '3', '2', '2', '2', '2', '1', '4', '4', '4', '4', '4', '1', '2', '2', '3', '1', '0', '0', '0'],
+            ['0', '0', '0', '1', '3', '3', '2', '2', '2', '2', '1', '1', '1', '1', '1', '2', '2', '3', '3', '1', '0', '0', '0'],
+            ['0', '0', '1', '3', '3', '3', '2', '1', '2', '2', '2', '2', '2', '2', '2', '1', '2', '3', '3', '3', '1', '0', '0'],
+            ['0', '0', '1', '3', '3', '1', '1', '1', '2', '2', '2', '2', '2', '2', '2', '1', '1', '1', '3', '3', '1', '0', '0'],
+            ['0', '0', '1', '3', '3', '3', '1', '1', '2', '2', '2', '2', '2', '2', '2', '1', '1', '3', '3', '3', '1', '0', '0'],
+            ['0', '0', '1', '3', '3', '3', '1', '1', '3', '3', '3', '3', '3', '3', '3', '1', '1', '3', '3', '3', '1', '0', '0'],
+            ['0', '0', '0', '1', '1', '1', '0', '1', '3', '3', '3', '3', '3', '3', '3', '1', '0', '1', '1', '1', '0', '0', '0'],
+            ['0', '0', '0', '0', '0', '0', '1', '2', '2', '3', '3', '3', '3', '2', '2', '2', '1', '0', '0', '0', '0', '0', '0'],
+            ['0', '0', '0', '0', '0', '1', '3', '3', '2', '2', '2', '1', '2', '2', '2', '2', '3', '1', '0', '0', '0', '0', '0'],
+            ['0', '0', '0', '0', '1', '1', '3', '3', '3', '2', '1', '0', '1', '2', '3', '3', '3', '1', '1', '0', '0', '0', '0'],
+            ['0', '0', '1', '1', '3', '3', '3', '3', '3', '1', '0', '0', '0', '1', '3', '3', '3', '3', '3', '1', '1', '0', '0'],
+            ['0', '1', '3', '3', '3', '3', '3', '3', '3', '1', '0', '0', '0', '1', '3', '3', '3', '3', '3', '3', '3', '1', '0'],
+            ['0', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0', '0', '0', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0'],
+         ],
+         skins : {
+          normal : {
+            '0' : 'skip',
+            '1' : '#000000',
+            '2' : '#00faff',
+            '3' : '#007fff',
+            '4' : '#ffd9cc',
+            '5' : '#ffffff',
+          }
+         }
         }
       },
       selectedModel : 'Mario',
+      selectedSkin : 'normal',
       title : "Pixel"
     }
   },
 
-  onSelect: function(event) {
+  onModelSelect: function(event) {
     this.setState({
       selectedModel : event.target.value
+    });
+  },
+
+  onSkinSelect: function(event) {
+    this.setState({
+      selectedSkin : event.target.value
     });
   },
 
@@ -70,7 +95,9 @@ var Pixel = React.createClass({
         <SketchbookMenu title={this.state.title}>
           <div>
             <label htmlFor="model">Model</label>
-            <select value={this.state.selectedModel} onChange={this.onSelect}>
+            <select 
+              value={this.state.selectedModel} 
+              onChange={this.onModelSelect}>
               {Object.keys(this.state.selectorOptions).map((function(name) {
                 var model = this.state.selectorOptions[name];
                 return (
@@ -84,9 +111,15 @@ var Pixel = React.createClass({
         </SketchbookMenu>
         <div className="demo">
           <div className="center">
-            <PixelCanvas pixels={
-              this.state.selectorOptions[this.state.selectedModel].pixels
-            }/>
+            <PixelCanvas 
+              pixels={
+                this.state.selectorOptions[this.state.selectedModel].pixels
+              }
+              skin={
+                this.state.selectorOptions[this.state.selectedModel]
+                  .skins[this.state.selectedSkin]
+              }
+            />
           </div>
         </div>
       </div>
@@ -122,6 +155,7 @@ var PixelCanvas = React.createClass({
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     var pixels = this.props.pixels;
+    var skin = this.props.skin;
     // Calculating pixel size to keep aspect ratio of drawing
     var size = Math.floor(Math.min(
       canvas.width / pixels[0].length, 
@@ -131,7 +165,14 @@ var PixelCanvas = React.createClass({
     var offsetY = (canvas.height - (size * pixels.length)) / 2;
     for (var y = 0; y < pixels.length; y++) {
       for (var x = 0; x < pixels[y].length; x++) {
-        ctx.fillStyle = pixels[y][x];
+        var fillStyle = pixels[y][x];
+        if (skin.hasOwnProperty(fillStyle)) {
+          fillStyle = skin[fillStyle]; 
+        }
+        if (fillStyle == 'skip') {
+          continue;
+        }
+        ctx.fillStyle = fillStyle;
         ctx.fillRect(
           Math.floor(offsetX + (x * size)), 
           Math.floor(offsetY + ( y * size)), 
