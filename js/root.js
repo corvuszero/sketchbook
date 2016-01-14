@@ -28,6 +28,12 @@ var Pixel = React.createClass({
             '1' : '#d80000',
             '2' : '#706800',
             '3' : '#f8ab00'
+          },
+          luigi : {
+            '0' : 'skip',
+            '1' : '#fcfcfc',
+            '2' : '#009300',
+            '3' : '#f8ab00'
           }
          }
         },
@@ -67,6 +73,14 @@ var Pixel = React.createClass({
             '3' : '#007fff',
             '4' : '#ffd9cc',
             '5' : '#ffffff',
+          },
+          metal : {
+            '0' : 'skip',
+            '1' : '#000000',
+            '2' : '#ffe984',
+            '3' : '#90810e',
+            '4' : '#ffd9cc',
+            '5' : '#ffffff',
           }
          }
         }
@@ -79,7 +93,8 @@ var Pixel = React.createClass({
 
   onModelSelect: function(event) {
     this.setState({
-      selectedModel : event.target.value
+      selectedModel : event.target.value,
+      selectedSkin : 'normal'
     });
   },
 
@@ -106,6 +121,21 @@ var Pixel = React.createClass({
                   </option>
                 );
               }).bind(this))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="skin">Skin</label>
+            <select
+              value={this.state.selectedSkin}
+              onChange={this.onSkinSelect}>
+              {Object.keys(this.state.selectorOptions[this.state.selectedModel].skins)
+                .map((function(skin) {
+                  return (
+                    <option key={skin} value={skin}>
+                      {skin}
+                    </option>
+                  );
+                }).bind(this))}
             </select>
           </div>
         </SketchbookMenu>
