@@ -2,9 +2,10 @@
 ## Canvas Experimentation Project
 ### Quickly test:
 * Clone the repo.
-* Execute command:
+* Install and execute Gulp:
 ```
-browserify app/js/main.js -o app/bin/bundle.js -t [ babelify --presets [ es2015 react ] ]
+npm install -g gulp
+gulp
 ```
 * Serve
 ```
