@@ -1,0 +1,19 @@
+{
+  "name": "sketchbook",
+  "version": "1.0.0",
+  "description": "Canas experimentation",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corvuszero/sketchbook.git"
+  },
+  "author": "Alan Morales",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
