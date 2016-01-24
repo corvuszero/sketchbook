@@ -2,7 +2,11 @@
 ## Canvas Experimentation Project
 ### Quickly test:
 * Clone the repo.
-* Serve via HTTP. Example:
+* Execute command:
 ```
-python -m SimpleHTTPServer 80
+browserify app/js/main.js -o app/bin/bundle.js -t [ babelify --presets [ es2015 react ] ]
+```
+* Serve
+```
+node server.js
 ```
