@@ -18,7 +18,6 @@
     "type": "git",
     "url": "https://github.com/corvuszero/sketchbook.git"
   },
-  "author": "Alan Morales",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",
@@ -36,6 +35,7 @@
     "gulp": "^3.9.0",
     "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.0",
+    "gulp-html-replace": "^1.5.5",
     "gulp-uglify": "^1.5.1",
     "node-jsx": "^0.13.3"
   }
