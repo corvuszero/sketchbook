@@ -20,6 +20,8 @@
   },
   "license": "ISC",
   "dependencies": {
+    "babel": "^6.3.26",
+    "babel-core": "^6.4.5",
     "body-parser": "^1.14.2",
     "ejs": "^2.4.1",
     "express": "^4.13.4",

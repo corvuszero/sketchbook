@@ -1,0 +1,9 @@
+/*
+ * Pixel
+ */
+.pixelCanvas {
+  min-width: 10%;
+  min-height: 10%;
+	width: 50%;
+	height: 50%;
+}

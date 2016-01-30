@@ -1,0 +1,14 @@
+.navBar {
+  box-sizing: border-box;
+  color: #FFFFFF;
+  flex: none;
+  padding: 5px 0 0 5px;
+  height: 55px;
+}
+
+.navBar h1 {
+  font-size: 24px;
+  font-weight: 100;
+  margin: 0 0 5px 0;
+  text-align: center;
+}
