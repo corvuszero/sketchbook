@@ -1,5 +1,7 @@
 'use strict';
 
+const InfoTable = require('../common/InfoTable');
+const InfoRow = require('../common/InfoRow');
 const React = require('react');
 const SketchbookMenu = require('../SketchbookMenu');
 const MenuSection = require('../MenuSection'); 
@@ -26,33 +28,37 @@ const PixelMenu = React.createClass({
     return (
       <SketchbookMenu title={this.props.title}>
         <MenuSection>
-          <label htmlFor="model">Model</label>
-          <select 
-            value={this.props.selectedModel} 
-            onChange={this.onModelSelect}>
-            {Object.keys(this.props.selectorOptions).map((function(name) {
-              var model = this.props.selectorOptions[name];
-              return (
-                <option key={model.key} value={name}>
-                  {name}
-                </option>
-              );
-            }).bind(this))}
-          </select>
-          <label htmlFor="skin">Skin</label>
-          <select
-            value={this.props.selectedSkin}
-            onChange={this.onSkinSelect}>
-            {Object.keys(
-              this.props.selectorOptions[this.props.selectedModel].skins
-            ).map((function(skin) {
-              return (
-                <option key={skin} value={skin}>
-                  {skin}
-                </option>
-              );
-            }).bind(this))}
-          </select>
+          <InfoTable>
+            <InfoRow label="Model">
+              <select 
+                value={this.props.selectedModel} 
+                onChange={this.onModelSelect}>
+                {Object.keys(this.props.selectorOptions).map((function(name) {
+                  var model = this.props.selectorOptions[name];
+                  return (
+                    <option key={model.key} value={name}>
+                      {name}
+                    </option>
+                  );
+                }).bind(this))}
+              </select>
+            </InfoRow>
+            <InfoRow label="Skin">
+              <select
+                value={this.props.selectedSkin}
+                onChange={this.onSkinSelect}>
+                {Object.keys(
+                  this.props.selectorOptions[this.props.selectedModel].skins
+                ).map((function(skin) {
+                  return (
+                    <option key={skin} value={skin}>
+                      {skin}
+                    </option>
+                  );
+                }).bind(this))}
+              </select>
+            </InfoRow>
+          </InfoTable>
         </MenuSection>
       </SketchbookMenu>
     );
