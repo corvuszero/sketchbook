@@ -2,8 +2,8 @@
 
 const React = require('react');
 const PixelCanvas = require('./PixelCanvas');
+const PixelMenu = require('./PixelMenu');
 const SketchbookApp = require('../SketchbookApp');
-const SketchbookMenu = require('../SketchbookMenu');
 
 const Pixel = React.createClass({
   getInitialState: function() {
@@ -114,39 +114,14 @@ const Pixel = React.createClass({
   render: function() {
     return (
       <SketchbookApp>
-        <SketchbookMenu title={this.state.title}>
-          <div>
-            <label htmlFor="model">Model</label>
-            <select 
-              value={this.state.selectedModel} 
-              onChange={this.onModelSelect}>
-              {Object.keys(this.state.selectorOptions).map((function(name) {
-                var model = this.state.selectorOptions[name];
-                return (
-                  <option key={model.key} value={name}>
-                    {name}
-                  </option>
-                );
-              }).bind(this))}
-            </select>
-          </div>
-          <div>
-            <label htmlFor="skin">Skin</label>
-            <select
-              value={this.state.selectedSkin}
-              onChange={this.onSkinSelect}>
-              {Object.keys(
-                this.state.selectorOptions[this.state.selectedModel].skins
-              ).map((function(skin) {
-                return (
-                  <option key={skin} value={skin}>
-                    {skin}
-                  </option>
-                );
-              }).bind(this))}
-            </select>
-          </div>
-        </SketchbookMenu>
+        <PixelMenu
+          onModelSelect={this.onModelSelect}
+          onSkinSelect={this.onSkinSelect}
+          selectedModel={this.state.selectedModel}
+          selectedSkin={this.state.selectedSkin}
+          selectorOptions={this.state.selectorOptions}
+          title={this.state.title}
+        />
         <PixelCanvas 
           pixels={
             this.state.selectorOptions[this.state.selectedModel].pixels
