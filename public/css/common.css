@@ -46,17 +46,22 @@
   border-radius: 8px;
   flex: 0 0 auto;
   margin: 4px 2px 4px 4px;
-  padding: 30px 15px 30px 15px;
+  padding: 30px 20px 30px 20px;
   width: 240px;
 }
 
+.menuSection {
+  border-bottom: 1px solid #999999;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
 .menu .title {
-  color: #9f67e4;
+  color: #666666;
+  font-size: 32px;
   font-weight: normal;
   margin: auto;
-  margin-bottom: 8px;
   text-align: center;
-  width: 50%;
 }
 
 #root {
