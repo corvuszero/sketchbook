@@ -16,7 +16,7 @@
 }
 
 .container {
-  background-color: #884dff;
+  background-color: #9f67e4;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -26,36 +26,40 @@
 .demo {
   background-color: #ffffff;
   flex: 1;
-  height: 100%;
-  width: 100%;
+  height: calc(100% - 8px);
+  margin: 4px 4px 4px 2px;
 }
 
 .flexWrapper {
+  box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;
-  height: 100%;
-  width: 100%;
+  height: calc(100% - 8px);
+  margin: 4px;
+  width: calc(100% - 8px);
 }
 
 .menu {
   background-color: #ffffff;
   border-right: 1px solid #a6a6a6;
   flex: 0 0 auto;
-  height: 100%;
+  margin: 4px 2px 4px 4px;
   width: 240px;
 }
 
 .menu .title {
   color: #7200e6;
+  font-weight: normal;
   margin: auto;
   margin-bottom: 8px;
-  margin-top: 8px;
   text-align: center;
   width: 50%;
 }
 
 #root {
   height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+  letter-spacing: 1px;
   position: absolute;
   width: 100%;
 }
