@@ -2,6 +2,7 @@
 
 const React = require('react');
 const PixelCanvas = require('./PixelCanvas');
+const SketchbookApp = require('../SketchbookApp');
 const SketchbookMenu = require('../SketchbookMenu');
 
 const Pixel = React.createClass({
@@ -112,52 +113,50 @@ const Pixel = React.createClass({
 
   render: function() {
     return (
-      <div className="app">
-        <div className="flexWrapper">
-          <SketchbookMenu title={this.state.title}>
-            <div>
-              <label htmlFor="model">Model</label>
-              <select 
-                value={this.state.selectedModel} 
-                onChange={this.onModelSelect}>
-                {Object.keys(this.state.selectorOptions).map((function(name) {
-                  var model = this.state.selectorOptions[name];
-                  return (
-                    <option key={model.key} value={name}>
-                      {name}
-                      </option>
-                  );
-                }).bind(this))}
-              </select>
-            </div>
-            <div>
-              <label htmlFor="skin">Skin</label>
-              <select
-                value={this.state.selectedSkin}
-                onChange={this.onSkinSelect}>
-                {Object.keys(
-                  this.state.selectorOptions[this.state.selectedModel].skins
-                ).map((function(skin) {
-                    return (
-                      <option key={skin} value={skin}>
-                        {skin}
-                      </option>
-                    );
-                }).bind(this))}
-              </select>
-            </div>
-          </SketchbookMenu>
-          <PixelCanvas 
-            pixels={
-              this.state.selectorOptions[this.state.selectedModel].pixels
-            }
-            skin={
-              this.state.selectorOptions[this.state.selectedModel]
-                .skins[this.state.selectedSkin]
-            }
-          />
-        </div>
-      </div>
+      <SketchbookApp>
+        <SketchbookMenu title={this.state.title}>
+          <div>
+            <label htmlFor="model">Model</label>
+            <select 
+              value={this.state.selectedModel} 
+              onChange={this.onModelSelect}>
+              {Object.keys(this.state.selectorOptions).map((function(name) {
+                var model = this.state.selectorOptions[name];
+                return (
+                  <option key={model.key} value={name}>
+                    {name}
+                  </option>
+                );
+              }).bind(this))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="skin">Skin</label>
+            <select
+              value={this.state.selectedSkin}
+              onChange={this.onSkinSelect}>
+              {Object.keys(
+                this.state.selectorOptions[this.state.selectedModel].skins
+              ).map((function(skin) {
+                return (
+                  <option key={skin} value={skin}>
+                    {skin}
+                  </option>
+                );
+              }).bind(this))}
+            </select>
+          </div>
+        </SketchbookMenu>
+        <PixelCanvas 
+          pixels={
+            this.state.selectorOptions[this.state.selectedModel].pixels
+          }
+          skin={
+            this.state.selectorOptions[this.state.selectedModel]
+              .skins[this.state.selectedSkin]
+          }
+        />
+      </SketchbookApp>
     );
   }
 });
