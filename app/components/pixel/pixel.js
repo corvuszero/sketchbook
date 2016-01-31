@@ -147,19 +147,15 @@ const Pixel = React.createClass({
               </select>
             </div>
           </SketchbookMenu>
-          <div className="demo">
-            <div className="center">
-              <PixelCanvas 
-                pixels={
-                  this.state.selectorOptions[this.state.selectedModel].pixels
-                }
-                skin={
-                  this.state.selectorOptions[this.state.selectedModel]
-                    .skins[this.state.selectedSkin]
-                }
-              />
-            </div>
-          </div>
+          <PixelCanvas 
+            pixels={
+              this.state.selectorOptions[this.state.selectedModel].pixels
+            }
+            skin={
+              this.state.selectorOptions[this.state.selectedModel]
+                .skins[this.state.selectedSkin]
+            }
+          />
         </div>
       </div>
     );

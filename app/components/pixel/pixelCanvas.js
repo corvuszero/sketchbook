@@ -66,8 +66,12 @@ const PixelCanvas = React.createClass({
     this.draw();
 
     return (
-      <canvas ref="canvas" className="pixelCanvas">
-      </canvas>
+      <div className="demo">
+        <div className="center">
+          <canvas ref="canvas" className="pixelCanvas">
+          </canvas>
+        </div>
+      </div>
     );  
   }
 });
