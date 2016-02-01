@@ -5,7 +5,7 @@ const React = require('react');
 const InfoTable = React.createClass({
   render:function() {
     return (
-      <table>
+      <table className="infoTable">
         <tbody>
           {this.props.children}
         </tbody>

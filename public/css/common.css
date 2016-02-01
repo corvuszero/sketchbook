@@ -41,6 +41,23 @@
   width: calc(100% - 8px);
 }
 
+.infoTable {
+  width: 100%;
+}
+
+.infoTable label {
+  float: right;
+}
+
+.infoTable tr {
+  width: 100%;
+}
+
+.infoTable td {
+  width: 50%;
+  padding: 0 4px 4px 4px;
+}
+
 .menu {
   background-color: #fafafa;
   border-radius: 8px;
@@ -53,6 +70,7 @@
 .menuSection {
   border-bottom: 1px solid #999999;
   margin-bottom: 8px;
+  padding-bottom: 8px;
   width: 100%;
 }
 
