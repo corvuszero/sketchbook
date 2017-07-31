@@ -2,6 +2,8 @@
 
 const React = require('react');
 
+const cx = require('classnames');
+
 const PixelCanvas = React.createClass({
   componentDidMount: function() {
     window.addEventListener('resize', this.handleResize);
@@ -66,9 +68,9 @@ const PixelCanvas = React.createClass({
     this.draw();
 
     return (
-      <div className="demo">
-        <div className="center">
-          <canvas ref="canvas" className="pixelCanvas">
+      <div className={cx("demo")}>
+        <div className={cx("center")}>
+          <canvas ref="canvas" className={cx("pixelCanvas")}>
           </canvas>
         </div>
       </div>

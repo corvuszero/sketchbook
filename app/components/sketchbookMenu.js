@@ -1,14 +1,16 @@
 'use strict';
 
-const MenuSection = require('./MenuSection');
 const React = require('react');
+const MenuSection = require('./MenuSection');
+
+const cx = require('classnames');
 
 const SketchbookMenu = React.createClass({
   render: function() {
     return (
-      <div className="menu">
+      <div className={cx("menu")}>
         <MenuSection>
-          <div className="title">{this.props.title}</div>
+          <div className={cx("title")}>{this.props.title}</div>
         </MenuSection>
         {this.props.children}
       </div>
